@@ -16,9 +16,10 @@ import java.util.List;
  */
 @Service
 public class CheckUserServer {
-    @Autowired
     private UserMapper userMapper;
-
+    public CheckUserServer(UserMapper userMapper){
+        this.userMapper = userMapper;
+    }
     public User checkoutLogin(String username, String password) {
         User user;
         try{
